@@ -1,0 +1,26 @@
+{
+  "name": "Callcenter",
+  "version": "1.0.0",
+  "description": "Simple callcenter simulating by PWA",
+  "main": "server/",
+  "author": "Kamran Hayati <kaloneh@gmail.com>",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/kaloneh/simple-callcenter"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server/"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "nodemon": "^1.19.1",
+    "socket.io": "^2.1.1",
+    "toastr": "^2.1.4"
+  },
+  "devDependencies": {
+    "popper.js": "1.14.7"
+  }
+}
