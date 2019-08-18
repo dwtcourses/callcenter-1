@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Photo Message</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/payload.css">
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/modules/toastr/build/toastr.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <style media="screen">
+        #toast-container {
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #toast-container > div {
+            opacity: 1;
+            box-shadow: 0 0 2rem rgba(0, 0, 0, 0.75);
+            border-radius: 0;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body class="bg-info">
+
+<main class="p-2">
+    <div id="payloads" class="container-fluid bg-secondary">
+        <div id="loader" class="text-center text-light" style="margin-top:10rem;">
+            <i class="fas fa-spinner fa-2x fa-pulse"></i>
+            <p>Loading Payloads</p>
+        </div>
+    </div>
+</main>
+<!-- Photo Modal -->
+<div class="modal fade text-info" id="photoframe" tabindex="-1" role="dialog" area-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-1">
+                <img src="" class="w-100 rounded" data-dismiss="modal">
+                <span class="text-justify font-weight-bold text-info"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Scripts -->
+<script src="/modules/jquery/dist/jquery.min.js"></script>
+<script src="/modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/modules/toastr/build/toastr.min.js"></script>
+<script src="/Classes/Payload.js"></script>
+<script src="/Classes/Database.js"></script>
+<script src="/Classes/Helper.js"></script>
+<script src="/Classes/Agent.js"></script>
+<script src="/Classes/Queue.js"></script>
+<script src="/Classes/AgentQueue.js"></script>
+<script src="/Classes/CallEvents.js"></script>
+<script src="/main.js"></script>
+
+<!-- Init App if Supported -->
+<script>
+
+    // Check compatibility
+    if ('mediaDevices' in navigator) {
+
+        // Init App
+        _init();
+
+        // Register SW if supported
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+
+
+    } else {
+        // Show notification
+        toastr.error(null, 'This app is not supported by your browser.', {timeout: 30000});
+    }
+
+</script>
+
+</body>
+</html>

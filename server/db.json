@@ -1,0 +1,19 @@
+[
+  {
+    "id": 30,
+    "event": "RINGING",
+    "queue_id": 9
+  },
+  {
+    "id": 26,
+    "event": "ANSWER",
+    "queue_id": 8,
+    "agent_id": 63
+  },
+  {
+    "id": 27,
+    "event": "HANGUP",
+    "queue_id": 1,
+    "agent_id": 20
+  }
+]

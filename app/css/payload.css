@@ -1,0 +1,11 @@
+.payload{
+    background: aqua;
+    font-family: 'Lato', sans-serif;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.payload-vm{
+    vertical-align: middle;
+    padding: 0 1rem;
+}
