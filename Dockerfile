@@ -17,7 +17,7 @@ RUN apk update && \
 RUN npm install
 
 # Expose API port to the outside
-EXPOSE 80
+EXPOSE 8000 5000
 
 # Launch application
 CMD ["npm","start"]
